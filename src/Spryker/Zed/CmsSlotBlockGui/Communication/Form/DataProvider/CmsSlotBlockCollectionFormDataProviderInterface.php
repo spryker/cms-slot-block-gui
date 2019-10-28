@@ -9,7 +9,7 @@ namespace Spryker\Zed\CmsSlotBlockGui\Communication\Form\DataProvider;
 
 use Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer;
 
-interface SlotBlockCollectionDataProviderInterface
+interface CmsSlotBlockCollectionFormDataProviderInterface
 {
     /**
      * @param int $idCmsSlotTemplate
@@ -18,9 +18,4 @@ interface SlotBlockCollectionDataProviderInterface
      * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
      */
     public function getData(int $idCmsSlotTemplate, int $idCmsSlot): CmsSlotBlockCollectionTransfer;
-
-    /**
-     * @return array
-     */
-    public function getOptions(): array;
 }
