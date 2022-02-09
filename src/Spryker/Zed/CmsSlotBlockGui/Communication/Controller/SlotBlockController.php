@@ -104,7 +104,6 @@ class SlotBlockController extends AbstractController
             $cmsSlotBlockCriteriaTransfer = (new CmsSlotBlockCriteriaTransfer())
                 ->setIdCmsSlotTemplate($idCmsSlotTemplate)
                 ->setIdCmsSlot($idCmsSlot);
-            /** @var \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer $cmsSlotBlockCollectionTransfer */
             $cmsSlotBlockCollectionTransfer = $cmsSlotBlockCollectionForm->getData();
 
             $cmsSlotBlockFacade->deleteCmsSlotBlockRelationsByCriteria($cmsSlotBlockCriteriaTransfer);
