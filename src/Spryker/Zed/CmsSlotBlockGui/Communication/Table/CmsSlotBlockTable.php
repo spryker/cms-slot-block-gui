@@ -232,7 +232,7 @@ class CmsSlotBlockTable extends AbstractTable
     protected function generateStatusLabels(array $cmsSlotBlock): string
     {
         if ($cmsSlotBlock[SpyCmsBlockTableMap::COL_IS_ACTIVE]) {
-            return $this->generateLabel('Active', 'label-info');
+            return $this->generateLabel('Active', 'label-primary');
         }
 
         return $this->generateLabel('Inactive', 'label-danger');
