@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @method \Spryker\Zed\CmsSlotBlockGui\Communication\CmsSlotBlockGuiCommunicationFactory getFactory()
- * @method \Spryker\Zed\CmsSlotBlockGui\Business\CmsSlotBlockGuiFacadeInterface getFacade()
  */
 class SlotBlockController extends AbstractController
 {

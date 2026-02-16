@@ -26,7 +26,6 @@ use Symfony\Component\Form\FormInterface;
 
 /**
  * @method \Spryker\Zed\CmsSlotBlockGui\CmsSlotBlockGuiConfig getConfig()
- * @method \Spryker\Zed\CmsSlotBlockGui\Business\CmsSlotBlockGuiFacadeInterface getFacade()
  */
 class CmsSlotBlockGuiCommunicationFactory extends AbstractCommunicationFactory
 {
