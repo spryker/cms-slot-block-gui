@@ -28,11 +28,6 @@ class SlotBlockController extends AbstractController
      */
     protected const PARAM_ID_CMS_SLOT = 'id-cms-slot';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     public function indexAction(Request $request): array
     {
         $idCmsSlotTemplate = $this->castId($request->query->get(static::PARAM_ID_CMS_SLOT_TEMPLATE));
@@ -51,11 +46,6 @@ class SlotBlockController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(Request $request): JsonResponse
     {
         $idCmsSlotTemplate = $this->castId($request->query->get(static::PARAM_ID_CMS_SLOT_TEMPLATE));
@@ -66,11 +56,6 @@ class SlotBlockController extends AbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     public function formAction(Request $request): array
     {
         $idCmsSlotTemplate = $this->castId($request->query->get(static::PARAM_ID_CMS_SLOT_TEMPLATE));
@@ -84,13 +69,6 @@ class SlotBlockController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function getSlotBlockCollectionForm(Request $request, int $idCmsSlotTemplate, int $idCmsSlot): FormInterface
     {
         $cmsSlotBlockCollectionForm = $this->getFactory()

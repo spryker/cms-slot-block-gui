@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\CmsSlotTransfer;
 
 interface CmsSlotBlockGuiToCmsSlotFacadeInterface
 {
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function getCmsSlotById(int $idCmsSlot): CmsSlotTransfer;
 
-    /**
-     * @param int $idCmsSlotTemplate
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer
-     */
     public function getCmsSlotTemplateById(int $idCmsSlotTemplate): CmsSlotTemplateTransfer;
 }

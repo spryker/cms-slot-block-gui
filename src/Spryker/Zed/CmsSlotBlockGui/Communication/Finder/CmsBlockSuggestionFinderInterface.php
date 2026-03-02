@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer;
 
 interface CmsBlockSuggestionFinderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return array
-     */
     public function getCmsBlockSuggestions(
         CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer,
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer

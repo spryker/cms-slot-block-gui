@@ -29,12 +29,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class CmsSlotBlockGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return \Spryker\Zed\CmsSlotBlockGui\Communication\Table\CmsSlotBlockTable
-     */
     public function createSlotBlockTable(int $idCmsSlotTemplate, int $idCmsSlot): CmsSlotBlockTable
     {
         return new CmsSlotBlockTable(
@@ -46,12 +40,6 @@ class CmsSlotBlockGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createCmsSlotBlockCollectionForm(int $idCmsSlotTemplate, int $idCmsSlot): FormInterface
     {
         $cmsSlotBlockCollectionDataProvider = $this->createCmsSlotBlockCollectionFormDataProvider();
@@ -63,17 +51,11 @@ class CmsSlotBlockGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createCmsBlockChoiceForm(): FormInterface
     {
         return $this->getFormFactory()->create(CmsBlockChoiceForm::class);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockGui\Communication\Form\DataProvider\CmsSlotBlockCollectionFormDataProviderInterface
-     */
     public function createCmsSlotBlockCollectionFormDataProvider(): CmsSlotBlockCollectionFormDataProviderInterface
     {
         return new CmsSlotBlockCollectionFormDataProvider(
@@ -82,33 +64,21 @@ class CmsSlotBlockGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsSlotBlockFacadeInterface
-     */
     public function getCmsSlotBlockFacade(): CmsSlotBlockGuiToCmsSlotBlockFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockGuiDependencyProvider::FACADE_CMS_SLOT_BLOCK);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsSlotFacadeInterface
-     */
     public function getCmsSlotFacade(): CmsSlotBlockGuiToCmsSlotFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockGuiDependencyProvider::FACADE_CMS_SLOT);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsBlockFacadeInterface
-     */
     public function getCmsBlockFacade(): CmsSlotBlockGuiToCmsBlockFacadeInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockGuiDependencyProvider::FACADE_CMS_BLOCK);
     }
 
-    /**
-     * @return \Orm\Zed\CmsBlock\Persistence\SpyCmsBlockQuery
-     */
     public function getCmsBlockPropelQuery(): SpyCmsBlockQuery
     {
         return $this->getProvidedDependency(CmsSlotBlockGuiDependencyProvider::PROPEL_QUERY_CMS_BLOCK);
@@ -130,9 +100,6 @@ class CmsSlotBlockGuiCommunicationFactory extends AbstractCommunicationFactory
         return new CmsSlotBlockTransformer();
     }
 
-    /**
-     * @return \Spryker\Zed\CmsSlotBlockGui\Communication\Finder\CmsBlockSuggestionFinderInterface
-     */
     public function createCmsBlockSuggestionFinder(): CmsBlockSuggestionFinderInterface
     {
         return new CmsBlockSuggestionFinder($this->getCmsSlotBlockFacade());

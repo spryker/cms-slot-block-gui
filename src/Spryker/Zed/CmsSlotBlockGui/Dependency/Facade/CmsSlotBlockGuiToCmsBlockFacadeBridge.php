@@ -24,11 +24,6 @@ class CmsSlotBlockGuiToCmsBlockFacadeBridge implements CmsSlotBlockGuiToCmsBlock
         $this->cmsBlockFacade = $cmsBlockFacade;
     }
 
-    /**
-     * @param int $idCmsBlock
-     *
-     * @return \Generated\Shared\Transfer\CmsBlockTransfer|null
-     */
     public function findCmsBlockById(int $idCmsBlock): ?CmsBlockTransfer
     {
         return $this->cmsBlockFacade->findCmsBlockById($idCmsBlock);

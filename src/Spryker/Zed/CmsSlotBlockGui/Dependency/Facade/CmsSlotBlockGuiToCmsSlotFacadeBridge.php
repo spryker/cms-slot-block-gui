@@ -25,21 +25,11 @@ class CmsSlotBlockGuiToCmsSlotFacadeBridge implements CmsSlotBlockGuiToCmsSlotFa
         $this->cmsSlotFacade = $cmsSlotFacade;
     }
 
-    /**
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTransfer
-     */
     public function getCmsSlotById(int $idCmsSlot): CmsSlotTransfer
     {
         return $this->cmsSlotFacade->getCmsSlotById($idCmsSlot);
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotTemplateTransfer
-     */
     public function getCmsSlotTemplateById(int $idCmsSlotTemplate): CmsSlotTemplateTransfer
     {
         return $this->cmsSlotFacade->getCmsSlotTemplateById($idCmsSlotTemplate);

@@ -44,11 +44,6 @@ class CmsSlotBlockGuiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const CMS_SLOT_BLOCK_FORM_PLUGINS = 'CMS_SLOT_BLOCK_FORM_PLUGINS';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -62,11 +57,6 @@ class CmsSlotBlockGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCmsSlotBlockFacade(Container $container): Container
     {
         $container->set(static::FACADE_CMS_SLOT_BLOCK, function (Container $container) {
@@ -76,11 +66,6 @@ class CmsSlotBlockGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCmsSlotFacade(Container $container): Container
     {
         $container->set(static::FACADE_CMS_SLOT, function (Container $container) {
@@ -90,11 +75,6 @@ class CmsSlotBlockGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCmsBlockFacade(Container $container): Container
     {
         $container->set(static::FACADE_CMS_BLOCK, function (Container $container) {
@@ -104,11 +84,6 @@ class CmsSlotBlockGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCmsBlockPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_CMS_BLOCK, $container->factory(function () {
@@ -118,11 +93,6 @@ class CmsSlotBlockGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCmsSlotBlockFormPlugins(Container $container): Container
     {
         $container->set(static::CMS_SLOT_BLOCK_FORM_PLUGINS, function () {

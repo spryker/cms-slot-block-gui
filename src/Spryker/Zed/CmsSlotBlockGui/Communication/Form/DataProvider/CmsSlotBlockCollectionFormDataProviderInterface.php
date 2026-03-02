@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer;
 
 interface CmsSlotBlockCollectionFormDataProviderInterface
 {
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function getData(int $idCmsSlotTemplate, int $idCmsSlot): CmsSlotBlockCollectionTransfer;
 
     /**

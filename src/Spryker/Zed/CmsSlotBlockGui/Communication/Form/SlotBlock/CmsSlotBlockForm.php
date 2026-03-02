@@ -50,11 +50,6 @@ class CmsSlotBlockForm extends AbstractType
      */
     protected const OPTION_TEMPLATE_CONDITIONS = 'template_conditions';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired([static::OPTION_TEMPLATE_CONDITIONS]);
@@ -144,12 +139,6 @@ class CmsSlotBlockForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     * @param \Generated\Shared\Transfer\CmsSlotTemplateConfigurationTransfer $cmsSlotTemplateConfigurationTransfer
-     *
-     * @return void
-     */
     protected function runConditionFormPlugins(
         FormBuilderInterface $builder,
         CmsSlotTemplateConfigurationTransfer $cmsSlotTemplateConfigurationTransfer

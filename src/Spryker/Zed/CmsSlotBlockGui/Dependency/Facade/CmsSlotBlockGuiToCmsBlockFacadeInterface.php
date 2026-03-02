@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CmsBlockTransfer;
 
 interface CmsSlotBlockGuiToCmsBlockFacadeInterface
 {
-    /**
-     * @param int $idCmsBlock
-     *
-     * @return \Generated\Shared\Transfer\CmsBlockTransfer|null
-     */
     public function findCmsBlockById(int $idCmsBlock): ?CmsBlockTransfer;
 }

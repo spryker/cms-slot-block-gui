@@ -85,9 +85,6 @@ class CmsBlockChoiceForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'block-choice';

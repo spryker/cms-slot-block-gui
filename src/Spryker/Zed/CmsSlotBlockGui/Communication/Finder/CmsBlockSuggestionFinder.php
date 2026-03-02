@@ -36,20 +36,11 @@ class CmsBlockSuggestionFinder implements CmsBlockSuggestionFinderInterface
      */
     protected $cmsSlotBlockFacade;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsSlotBlockFacadeInterface $cmsSlotBlockFacade
-     */
     public function __construct(CmsSlotBlockGuiToCmsSlotBlockFacadeInterface $cmsSlotBlockFacade)
     {
         $this->cmsSlotBlockFacade = $cmsSlotBlockFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return array
-     */
     public function getCmsBlockSuggestions(
         CmsBlockCriteriaTransfer $cmsBlockCriteriaTransfer,
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
@@ -69,12 +60,6 @@ class CmsBlockSuggestionFinder implements CmsBlockSuggestionFinderInterface
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsBlockCollectionTransfer $cmsBlockSuggestionCollectionTransfer
-     * @param \Generated\Shared\Transfer\CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
-     *
-     * @return array
-     */
     protected function transformCmsBlocksToSuggestionData(
         CmsBlockCollectionTransfer $cmsBlockSuggestionCollectionTransfer,
         CmsSlotBlockCriteriaTransfer $cmsSlotBlockCriteriaTransfer
@@ -98,13 +83,6 @@ class CmsBlockSuggestionFinder implements CmsBlockSuggestionFinderInterface
         return $data;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsBlockTransfer $cmsBlockTransfer
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return bool
-     */
     protected function isCmsBlockAssignedToSlotAndTemplate(
         CmsBlockTransfer $cmsBlockTransfer,
         int $idCmsSlotTemplate,
@@ -120,11 +98,6 @@ class CmsBlockSuggestionFinder implements CmsBlockSuggestionFinderInterface
         return false;
     }
 
-    /**
-     * @param string|null $dateTime
-     *
-     * @return string
-     */
     protected function formatValidityDateTime(?string $dateTime): string
     {
         if (!$dateTime) {
@@ -139,11 +112,6 @@ class CmsBlockSuggestionFinder implements CmsBlockSuggestionFinderInterface
         return (string)date('F d, Y H:i', $timestamp);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return array
-     */
     protected function getPaginationData(PaginationTransfer $paginationTransfer): array
     {
         $hasMorePages = $paginationTransfer->getLastPage() > 0 &&

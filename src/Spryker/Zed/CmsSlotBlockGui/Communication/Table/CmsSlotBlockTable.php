@@ -97,13 +97,6 @@ class CmsSlotBlockTable extends AbstractTable
      */
     protected $idCmsSlot;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsBlockFacadeInterface $cmsBlockFacade
-     * @param \Orm\Zed\CmsBlock\Persistence\SpyCmsBlockQuery $cmsBlockQuery
-     * @param \Spryker\Zed\CmsSlotBlockGui\CmsSlotBlockGuiConfig $cmsSlotBlockGuiConfig
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     */
     public function __construct(
         CmsSlotBlockGuiToCmsBlockFacadeInterface $cmsBlockFacade,
         SpyCmsBlockQuery $cmsBlockQuery,
@@ -118,11 +111,6 @@ class CmsSlotBlockTable extends AbstractTable
         $this->idCmsSlot = $idCmsSlot;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config = $this->setHeader($config);
@@ -144,11 +132,6 @@ class CmsSlotBlockTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setHeader(TableConfiguration $config): TableConfiguration
     {
         $header = [
@@ -166,11 +149,6 @@ class CmsSlotBlockTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $this->filterCmsBlocks();
@@ -192,9 +170,6 @@ class CmsSlotBlockTable extends AbstractTable
         return $results;
     }
 
-    /**
-     * @return void
-     */
     protected function filterCmsBlocks(): void
     {
         $this->cmsBlockQuery
@@ -205,11 +180,6 @@ class CmsSlotBlockTable extends AbstractTable
             ->endUse();
     }
 
-    /**
-     * @param string|null $dateTime
-     *
-     * @return string
-     */
     protected function formatValidityDateTime(?string $dateTime): string
     {
         if (!$dateTime) {
@@ -224,11 +194,6 @@ class CmsSlotBlockTable extends AbstractTable
         return (string)date('F d, Y H:i', $timestamp);
     }
 
-    /**
-     * @param array $cmsSlotBlock
-     *
-     * @return string
-     */
     protected function generateStatusLabels(array $cmsSlotBlock): string
     {
         if ($cmsSlotBlock[SpyCmsBlockTableMap::COL_IS_ACTIVE]) {
@@ -238,11 +203,6 @@ class CmsSlotBlockTable extends AbstractTable
         return $this->generateLabel('Inactive', 'label-danger');
     }
 
-    /**
-     * @param int $idCmsBlock
-     *
-     * @return string
-     */
     protected function getStoreNames(int $idCmsBlock): string
     {
         $stores = $this->cmsBlockFacade->findCmsBlockById($idCmsBlock)->getStoreRelation()->getStores();
@@ -258,11 +218,6 @@ class CmsSlotBlockTable extends AbstractTable
         return implode(' ', $storeNames);
     }
 
-    /**
-     * @param array $cmsBlock
-     *
-     * @return string
-     */
     protected function getActionButtons(array $cmsBlock): string
     {
         $actionButtons = [];

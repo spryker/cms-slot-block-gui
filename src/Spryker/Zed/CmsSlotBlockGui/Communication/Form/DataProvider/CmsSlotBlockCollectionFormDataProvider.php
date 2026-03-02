@@ -25,10 +25,6 @@ class CmsSlotBlockCollectionFormDataProvider implements CmsSlotBlockCollectionFo
      */
     protected $cmsSlotBlockFacade;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsSlotFacadeInterface $cmsSlotFacade
-     * @param \Spryker\Zed\CmsSlotBlockGui\Dependency\Facade\CmsSlotBlockGuiToCmsSlotBlockFacadeInterface $cmsSlotBlockFacade
-     */
     public function __construct(
         CmsSlotBlockGuiToCmsSlotFacadeInterface $cmsSlotFacade,
         CmsSlotBlockGuiToCmsSlotBlockFacadeInterface $cmsSlotBlockFacade
@@ -37,12 +33,6 @@ class CmsSlotBlockCollectionFormDataProvider implements CmsSlotBlockCollectionFo
         $this->cmsSlotBlockFacade = $cmsSlotBlockFacade;
     }
 
-    /**
-     * @param int $idCmsSlotTemplate
-     * @param int $idCmsSlot
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotBlockCollectionTransfer
-     */
     public function getData(int $idCmsSlotTemplate, int $idCmsSlot): CmsSlotBlockCollectionTransfer
     {
         $cmsSlotBlockCriteriaTransfer = (new CmsSlotBlockCriteriaTransfer())
