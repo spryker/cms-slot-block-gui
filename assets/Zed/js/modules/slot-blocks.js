@@ -94,11 +94,13 @@ var SlotBlocks = function (options) {
     };
 
     this.isCmsSlotBlockContentProvider = function (api, indexes) {
-        return api
-            .row(indexes[0])
-            .nodes()
-            .to$()
-            .find('[' + _self.contentProviderAttribute + "='" + _self.cmsSlotBlockContentProvider + "']").length;
+        const rowNode = api.row(indexes[0]).node();
+
+        if (!rowNode) {
+            return false;
+        }
+
+        return $(rowNode).find(`[${_self.contentProviderAttribute} = ${_self.cmsSlotBlockContentProvider}]`).length > 0;
     };
 };
 

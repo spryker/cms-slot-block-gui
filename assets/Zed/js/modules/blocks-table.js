@@ -340,10 +340,15 @@ var BlocksTable = function (options) {
     };
 
     this.tableRowSelect = function (element) {
-        var rowIndex = _self.selectedRowIndex;
+        let rowIndex = _self.selectedRowIndex;
+        const tableRowsCount = $(_self.$blocksTable).DataTable().rows().count();
 
-        if ($(_self.$blocksTable).DataTable().rows().count() < 1) {
+        if (tableRowsCount < 1) {
             return;
+        }
+
+        if (rowIndex <= _self.selectedRowIndex) {
+            rowIndex = 0;
         }
 
         if (element !== undefined && $(element.target).is('td')) {
